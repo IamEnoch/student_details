@@ -2,7 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:id="@+id/top_nav_menu"
+    >
 
     <item android:title="@string/student_details" android:id="@+id/student_details" />
     <item android:title="@string/course_details" android:id="@+id/course_details" />
