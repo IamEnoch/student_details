@@ -6,9 +6,170 @@
     tools:context=".Fragments.Summary">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <TableLayout
         android:layout_width="match_parent"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:stretchColumns="1">
+
+<!--name-->
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:text="@string/name"
+                android:padding="5dip" />
+
+            <TextView
+                android:text="VIC"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+
+<!--     regno   -->
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:text="@string/name"
+                android:padding="5dip" />
+
+            <TextView
+                android:text="VIC"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+
+
+<!--  id no-->
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:text="@string/name"
+                android:padding="5dip" />
+
+            <TextView
+                android:text="VIC"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+
+<!--        Department-->
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:text="@string/name"
+                android:padding="5dip" />
+
+            <TextView
+                android:text="VIC"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+<!--        Course-->
+
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:text="@string/name"
+                android:padding="5dip" />
+
+            <TextView
+                android:text="VIC"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+<!--        Year-->
+
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:text="@string/name"
+                android:padding="5dip" />
+
+            <TextView
+                android:text="VIC"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+<!--        Sem-->
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:text="@string/name"
+                android:padding="5dip" />
+
+            <TextView
+                android:text="VIC"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+<!--      Units  -->
+
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:text="@string/name"
+                android:padding="5dip" />
+
+            <TextView
+                android:text="VIC"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+    </TableLayout>
 
 </FrameLayout>

@@ -30,6 +30,7 @@
     <string name="course_list">Course List</string>
     <string name="save">Save</string>
     <string name="next">Next</string>
+    <string name="name">Name</string>
 
     <string-array name="courses">
         <item>C</item>
