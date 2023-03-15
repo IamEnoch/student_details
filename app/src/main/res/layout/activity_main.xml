@@ -22,6 +22,7 @@
         android:fontFamily="sans-serif"
         android:text="@string/app_name"
         android:textAlignment="center"
+        android:contentDescription="@string/this_is_menu"
         android:textSize="30sp" />
 
     <com.google.android.material.tabs.TabLayout
@@ -42,6 +43,7 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/this_is_the_body_fragment"
        >
 
     </androidx.viewpager.widget.ViewPager>

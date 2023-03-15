@@ -1,6 +1,8 @@
 package com.example.studentdetails;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +23,13 @@ public class MainActivity extends AppCompatActivity {
         binding.viewPager.setAdapter(new FragmentsAdapter(getSupportFragmentManager()));
         binding.tabLayout.setupWithViewPager(binding.viewPager);
 
-        }
+//        Spinner spinner = findViewById(R.id.courses);
+//        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.courses, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+//
+//        spinner.setAdapter(adapter);
+
+    }
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu){
 //        MenuInflater inflater = getMenuInflater();
