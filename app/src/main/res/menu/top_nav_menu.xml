@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <item android:title="@string/student_details" />
-    <item android:title="@string/course_details" />
-    <item android:title="@string/summary" />
+    <item android:title="@string/student_details" android:id="@+id/student_details" />
+    <item android:title="@string/course_details" android:id="@+id/course_details" />
+    <item android:title="@string/summary" android:id="@+id/summary"/>
 </menu>

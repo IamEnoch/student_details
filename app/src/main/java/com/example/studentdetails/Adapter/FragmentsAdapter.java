@@ -20,10 +20,11 @@ public class FragmentsAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
 
         switch (position){
-            case 1: return new CourseDetails();
-            case 2: return new Summary();
             case 0:
             default: return  new StudentDetails();
+            case 1: return new CourseDetails();
+            case 2: return new Summary();
+
         }
     }
 
