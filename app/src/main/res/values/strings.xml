@@ -16,6 +16,20 @@
     <string name="female">female</string>
     <string name="this_is_menu">This is menu</string>
     <string name="this_is_the_body_fragment">This is the body fragment</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="courses">Courses</string>
+    <string name="department">Department</string>
+    <string name="school">School</string>
+    <string name="course">course</string>
+    <string name="departments">department</string>
+    <string name="schools">school</string>
+    <string name="year">Year</string>
+    <string name="courses2">Course</string>
+    <string name="semester">Semester</string>
+    <string name="course_list">Course List</string>
+    <string name="save">Save</string>
+    <string name="next">Next</string>
 
     <string-array name="courses">
         <item>C</item>
