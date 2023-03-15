@@ -12,7 +12,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <EditText
             android:id="@+id/mname"
@@ -60,13 +62,14 @@
             android:id="@+id/idnum"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="28dp"
             android:autofillHints="@string/id_number"
             android:ems="10"
             android:gravity="start|top"
             android:hint="@string/id_number"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toStartOf="@+id/reg"
+            app:layout_constraintHorizontal_bias="0.64"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fname" />
 
@@ -74,14 +77,14 @@
             android:id="@+id/reg"
             android:layout_width="230dp"
             android:layout_height="60dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="28dp"
             android:autofillHints="@string/registration_number"
             android:ems="10"
             android:gravity="start|top"
             android:hint="@string/registration_number"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.893"
+            app:layout_constraintHorizontal_bias="0.966"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mname" />
 
@@ -100,43 +103,55 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="60dp"
-            android:text="course"
-            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/course"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="68dp"
-            android:text="department"
-            app:layout_constraintBottom_toTopOf="@+id/textView5"
-            app:layout_constraintEnd_toStartOf="@+id/department"
-            app:layout_constraintHorizontal_bias="0.625"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/departments"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="77dp"
             android:layout_height="0dp"
             android:layout_marginStart="20dp"
-            android:text="school"
+            android:layout_marginTop="67dp"
+            android:text="@string/schools"
+            app:layout_constraintEnd_toStartOf="@+id/school"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="419dp" />
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <Spinner
+            android:id="@+id/school"
+            android:layout_width="222dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="60dp"
+            android:autofillHints="Courses"
+            android:contentDescription="@string/school"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/department" />
 
         <RadioGroup
             android:id="@+id/gender"
             android:layout_width="220dp"
             android:layout_height="50dp"
             android:layout_marginStart="154dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="134dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.319"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/reg">
 
@@ -157,11 +172,12 @@
             android:id="@+id/courses"
             android:layout_width="222dp"
             android:layout_height="48dp"
+            android:layout_marginTop="44dp"
             android:autofillHints="Courses"
-            android:layout_marginTop="28dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.29"
             app:layoutDescription="@array/courses"
+            android:contentDescription="@string/courses"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.432"
             app:layout_constraintStart_toEndOf="@+id/textView3"
             app:layout_constraintTop_toBottomOf="@+id/gender" />
 
@@ -169,42 +185,40 @@
             android:id="@+id/department"
             android:layout_width="222dp"
             android:layout_height="48dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
+            android:contentDescription="@string/department"
             android:autofillHints="Courses"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.29"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
             app:layout_constraintTop_toBottomOf="@+id/courses" />
 
-        <Spinner
-            android:id="@+id/department2"
-            android:layout_width="222dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="56dp"
-            android:autofillHints="Courses"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.135"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/department" />
-
         <Button
-            android:id="@+id/button"
+            android:id="@+id/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/white"
+            android:text="@string/cancel"
+            android:textColorHighlight="#FF0000"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/department2"
-            app:layout_constraintVertical_bias="0.15"
-            tools:layout_editor_absoluteX="72dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.606"
+            app:layout_constraintStart_toEndOf="@+id/submit" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="84dp"
-            android:text="Button"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="512dp" />
+            android:layout_marginStart="104dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/school"
+            android:textColor="@color/white"
+            app:layout_constraintVertical_bias="1.0" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
