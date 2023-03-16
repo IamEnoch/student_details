@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "500256129173",
+    "project_id": "studentvue-72fb4",
+    "storage_bucket": "studentvue-72fb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500256129173:android:e423690eaa2eaea936db9c",
+        "android_client_info": {
+          "package_name": "com.example.studentdetails"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500256129173-hubn94trhntvsppv7fv7dv6feorgv116.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWW9SP51oqZQXL_eUANm5zozGiHYcFec4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500256129173-hubn94trhntvsppv7fv7dv6feorgv116.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
