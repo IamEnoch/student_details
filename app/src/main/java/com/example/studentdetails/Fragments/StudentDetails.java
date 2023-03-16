@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +38,7 @@ public class StudentDetails extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     public StudentDetails() {
         // Required empty public constructor
     }
@@ -67,13 +70,17 @@ public class StudentDetails extends Fragment {
         EditText idNum = rootView.findViewById(R.id.idnum);
         EditText regNum = rootView.findViewById(R.id.reg);
 
-        TextView textView2 = rootView.findViewById(R.id.textView2);
         Button submit = rootView.findViewById(R.id.submit);
         Button cancel = rootView.findViewById(R.id.cancel);
 
+        RadioButton male = rootView.findViewById(R.id.male);
+        RadioButton female  = rootView.findViewById(R.id.female);
 
 
-        submit.setOnClickListener(new View.OnClickListener() {
+
+        if(){
+
+        }submit.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -83,9 +90,17 @@ public class StudentDetails extends Fragment {
                 String idNumber = idNum.getText().toString();
                 String registration = regNum.getText().toString();
 
+
+                String gender = null;
+                if (male.isChecked()) {
+                    gender = "male";
+                } else if (female.isChecked()) {
+                    gender = "female";
+                }
+
                 Map<String, Object> student = new HashMap<>();
                 student.put("firstName", f_name);
-                student.put("gender", "male");
+                student.put("gender", gender);
                 student.put("idNumber", idNumber);
                 student.put("lastName", l_name);
                 student.put("registrationNumber", registration);
@@ -98,14 +113,18 @@ public class StudentDetails extends Fragment {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                Toast.makeText(getActivity(), "Added successfully" + documentReference.getId(), Toast.LENGTH_SHORT).show();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Log.w(TAG, "Error adding document", e);
+                                Toast.makeText(getActivity(), "Failed To Add" + e, Toast.LENGTH_SHORT).show();
+
                             }
                         });
+
             }
         });
 
