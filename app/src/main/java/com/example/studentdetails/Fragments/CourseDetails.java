@@ -1,5 +1,6 @@
 package com.example.studentdetails.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -52,6 +53,7 @@ public class CourseDetails extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
@@ -63,6 +65,9 @@ public class CourseDetails extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_course_details, container, false);
 
+
+        Intent i = getIntent();
+        String course = g
 
         return rootView;
     }
