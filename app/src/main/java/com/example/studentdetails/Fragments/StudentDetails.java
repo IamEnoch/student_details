@@ -199,6 +199,7 @@ public class StudentDetails extends Fragment {
 
                         }
                     });
+
                 }
 
             }
@@ -258,11 +259,10 @@ public class StudentDetails extends Fragment {
 
                             }
                         });
-                Intent i = new Intent(getContext(), CourseDetails.class);
-
-
-                i.putExtra("course", selectedCourse);
-                startActivity(i);
+                Bundle result = new Bundle();
+                result.putString("course", selectedCourse);
+                result.putString("id", idNumber);
+                getParentFragmentManager().setFragmentResult("dataCourse", result);
             }
 
         });
