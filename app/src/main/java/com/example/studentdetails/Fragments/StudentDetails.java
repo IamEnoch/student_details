@@ -11,13 +11,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.studentdetails.MainActivity;
 import com.example.studentdetails.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -75,12 +76,27 @@ public class StudentDetails extends Fragment {
 
         RadioButton male = rootView.findViewById(R.id.male);
         RadioButton female  = rootView.findViewById(R.id.female);
+        Spinner courses = rootView.findViewById(R.id.courses);
+        Spinner department = rootView.findViewById(R.id.department);
+        Spinner school = rootView.findViewById(R.id.school);
+
+
+        ArrayAdapter<CharSequence> coursesAdapter = ArrayAdapter.createFromResource(getContext(),R.array.courses,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> departmentAdapter = ArrayAdapter.createFromResource(getContext(),R.array.department,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> schoolAdapter = ArrayAdapter.createFromResource(getContext(),R.array.school,android.R.layout.simple_spinner_item);
+
+        coursesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        departmentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        schoolAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        courses.setAdapter(coursesAdapter);
+        department.setAdapter(departmentAdapter);
+        school.setAdapter(schoolAdapter);
 
 
 
-        if(){
 
-        }submit.setOnClickListener(new View.OnClickListener() {
+        submit.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
