@@ -34,34 +34,33 @@ public class CourseDetails extends Fragment {
                              Bundle savedInstanceState) {
 
 
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_course_details, container, false);
+            // Inflate the layout for this fragment
+            View rootView = inflater.inflate(R.layout.fragment_course_details, container, false);
 
-        Button next = rootView.findViewById(R.id.next);
+            Button next = rootView.findViewById(R.id.next);
 
-        getParentFragmentManager().setFragmentResultListener("dataCourse",
-                this,
-                new FragmentResultListener(){
-                    @Override
-                    public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                        String course = result.getString("course");
-                        String id = result.getString("id");
+            getParentFragmentManager().setFragmentResultListener("dataCourse",
+                    this,
+                    new FragmentResultListener(){
+                        @Override
+                        public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                            String course = result.getString("course");
+                            String id = result.getString("id");
 
-                        TextView T = rootView.findViewById(R.id.textView7);
-                        T.setText(id);
 
-                    }
-                });
+    // ADD LOGIC HERE
+                        }
+                    });
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Fragment secondFrag = new Summary();
-                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
-                fm.replace(R.id.summaryFrag, secondFrag).commit();
-            }
-        });
+            next.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Fragment secondFrag = new Summary();
+                    FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                    fm.replace(R.id.course, secondFrag).commit();
+                }
+            });
 
-        return rootView;
+            return rootView;
     }
 }
