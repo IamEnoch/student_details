@@ -2,6 +2,7 @@ package com.example.studentdetails.Fragments;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,14 +12,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.studentdetails.MainActivity;
 import com.example.studentdetails.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -40,6 +43,11 @@ public class StudentDetails extends Fragment {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    private String selectedSchool, selectedDepartment, selectedCourse;
+    private Spinner school_spinner, department_spinner, course_spinner;
+    private ArrayAdapter<CharSequence> school_adapter, department_adapter, course_adapter;
+    private String f_name, m_name, l_name, reg_no, gender, id_no;
+    private RadioGroup radioGroup;
     public StudentDetails() {
         // Required empty public constructor
     }
@@ -76,22 +84,132 @@ public class StudentDetails extends Fragment {
 
         RadioButton male = rootView.findViewById(R.id.male);
         RadioButton female  = rootView.findViewById(R.id.female);
-        Spinner courses = rootView.findViewById(R.id.courses);
-        Spinner department = rootView.findViewById(R.id.department);
-        Spinner school = rootView.findViewById(R.id.school);
+        Spinner course_spinner = rootView.findViewById(R.id.courses);
+        Spinner department_spinner = rootView.findViewById(R.id.department);
+        Spinner school_spinner = rootView.findViewById(R.id.school);
 
 
-        ArrayAdapter<CharSequence> coursesAdapter = ArrayAdapter.createFromResource(getContext(),R.array.courses,android.R.layout.simple_spinner_item);
-        ArrayAdapter<CharSequence> departmentAdapter = ArrayAdapter.createFromResource(getContext(),R.array.department,android.R.layout.simple_spinner_item);
-        ArrayAdapter<CharSequence> schoolAdapter = ArrayAdapter.createFromResource(getContext(),R.array.school,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> school_adapter = ArrayAdapter.createFromResource(getContext(), R.array.school_array, R.layout.spinner_layout);
 
-        coursesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        departmentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        schoolAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        school_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        courses.setAdapter(coursesAdapter);
-        department.setAdapter(departmentAdapter);
-        school.setAdapter(schoolAdapter);
+        school_spinner.setAdapter(school_adapter);
+
+        school_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                selectedSchool = school_spinner.getSelectedItem().toString();
+
+                int schoolSpinnerID = adapterView.getId();
+                if (schoolSpinnerID == R.id.school){
+                    switch(selectedSchool){
+
+                        case "Select The School": department_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.default_Department, R.layout.spinner_layout);
+                            break;
+
+                        case "School of Business": department_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.business_departments, R.layout.spinner_layout);
+                            break;
+
+
+                        case "School of Engineering": department_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.engineering_departments, R.layout.spinner_layout);
+                            break;
+
+
+                        case "School of Computer Science and IT": department_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.CS_and_IT_departments, R.layout.spinner_layout);
+                            break;
+
+                        case "School of Science": department_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.science_departments, R.layout.spinner_layout);
+                            break;
+
+
+                        default: break;
+
+                    }
+                    department_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                    department_spinner.setAdapter(department_adapter);
+
+                    department_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                            selectedDepartment = department_spinner.getSelectedItem().toString();
+
+                            int departmentSpinnerID = adapterView.getId();
+                            if(departmentSpinnerID == R.id.department){
+                                switch (selectedDepartment){
+                                    case "Select the Department": course_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.default_course, R.layout.spinner_layout);
+                                        break;
+
+                                    case "Department of Accounting": course_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.accounting_department, R.layout.spinner_layout);
+                                        break;
+
+                                    case "Department of Commerce": course_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.commerce_department, R.layout.spinner_layout);
+                                        break;
+
+                                    case "Department of Finance": course_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.finance_department, R.layout.spinner_layout);
+                                        break;
+
+                                    case "Department of Mechatronics Engineering": course_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.mechatronics_department, R.layout.spinner_layout);
+                                        break;
+
+                                    case "Department of Mechanical Engineering": course_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.mechanical_department, R.layout.spinner_layout);
+                                        break;
+
+                                    case "Department of Chemical Engineering": course_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.chemical_department, R.layout.spinner_layout);
+                                        break;
+
+                                    case "Department of Computer Science": course_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.cs_department, R.layout.spinner_layout);
+                                        break;
+
+                                    case "Department of IT": course_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.IT_department, R.layout.spinner_layout);
+                                        break;
+
+                                    case "Department of Nursing": course_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.nursing_department, R.layout.spinner_layout);
+                                        break;
+
+                                    case "Department of Actuarial Science": course_adapter = ArrayAdapter.createFromResource(adapterView.getContext(), R.array.actuarial_department, R.layout.spinner_layout);
+                                        break;
+
+
+                                    default: break;
+                                }
+
+                                course_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                                course_spinner.setAdapter(course_adapter);
+
+                                course_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                                        selectedCourse = course_spinner.getSelectedItem().toString();
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                                    }
+                                });
+                            }
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+                }
+
+            }
+
+
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
 
 
@@ -140,8 +258,13 @@ public class StudentDetails extends Fragment {
 
                             }
                         });
+                Intent i = new Intent(getContext(), CourseDetails.class);
 
+
+                i.putExtra("course", selectedCourse);
+                startActivity(i);
             }
+
         });
 
         cancel.setOnClickListener(new View.OnClickListener() {
