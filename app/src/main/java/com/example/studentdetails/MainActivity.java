@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding ;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         binding.viewPager.setAdapter(new FragmentsAdapter(getSupportFragmentManager()));
         binding.tabLayout.setupWithViewPager(binding.viewPager);
+
+
 
 //        Spinner spinner = findViewById(R.id.courses);
 //        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.courses, android.R.layout.simple_spinner_item);
