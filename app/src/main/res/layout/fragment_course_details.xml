@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.CourseDetails">
 
-    <!-- TODO: Update blank fragment layout -->
+<!--     TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,6 +31,7 @@
             android:layout_marginEnd="36dp"
             android:layout_marginBottom="91dp"
             app:layout_constraintBottom_toTopOf="@+id/year"
+            android:contentDescription="@string/course"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,6 +53,7 @@
             android:layout_marginBottom="59dp"
             app:layout_constraintBottom_toTopOf="@+id/recyclerView"
             app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/year"
             app:layout_constraintTop_toBottomOf="@+id/course" />
 
         <Spinner
@@ -60,6 +62,7 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="@+id/year"
             app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/semester"
             app:layout_constraintStart_toEndOf="@+id/year"
             app:layout_constraintTop_toTopOf="@+id/year" />
 

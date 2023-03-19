@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.Summary">
+    tools:context=".Fragments.Summary"
+    android:id="@+id/summaryFrag">
 
     <!-- TODO: Update blank fragment layout -->
     <TableLayout
@@ -24,7 +25,7 @@
                 android:padding="5dip" />
 
             <TextView
-                android:text="VIC"
+android:id="@+id/name"
                 android:gravity="end"
                 android:padding="3dip" />
         </TableRow>
@@ -36,14 +37,15 @@
 <!--     regno   -->
         <View
             android:layout_height="2dip"
+
             android:background="#FF909090" />
         <TableRow>
             <TextView
-                android:text="@string/name"
+                android:text="Reg Number"
                 android:padding="5dip" />
 
             <TextView
-                android:text="VIC"
+android:id="@+id/reg"
                 android:gravity="end"
                 android:padding="3dip" />
         </TableRow>
@@ -60,11 +62,11 @@
             android:background="#FF909090" />
         <TableRow>
             <TextView
-                android:text="@string/name"
+                android:text="Id Number"
                 android:padding="5dip" />
 
             <TextView
-                android:text="VIC"
+                android:id="@+id/id"
                 android:gravity="end"
                 android:padding="3dip" />
         </TableRow>
@@ -80,11 +82,11 @@
             android:background="#FF909090" />
         <TableRow>
             <TextView
-                android:text="@string/name"
+                android:text="Department"
                 android:padding="5dip" />
 
             <TextView
-                android:text="VIC"
+android:id="@+id/department"
                 android:gravity="end"
                 android:padding="3dip" />
         </TableRow>
@@ -100,11 +102,11 @@
             android:background="#FF909090" />
         <TableRow>
             <TextView
-                android:text="@string/name"
+                android:text="Course"
                 android:padding="5dip" />
 
             <TextView
-                android:text="VIC"
+android:id="@id/course"
                 android:gravity="end"
                 android:padding="3dip" />
         </TableRow>
@@ -120,11 +122,11 @@
             android:background="#FF909090" />
         <TableRow>
             <TextView
-                android:text="@string/name"
+                android:text="Year"
                 android:padding="5dip" />
 
             <TextView
-                android:text="VIC"
+android:id="@+id/year"
                 android:gravity="end"
                 android:padding="3dip" />
         </TableRow>
@@ -139,11 +141,11 @@
             android:background="#FF909090" />
         <TableRow>
             <TextView
-                android:text="@string/name"
+                android:text="Semester"
                 android:padding="5dip" />
 
             <TextView
-                android:text="VIC"
+android:id="@+id/sem"
                 android:gravity="end"
                 android:padding="3dip" />
         </TableRow>
@@ -159,11 +161,11 @@
             android:background="#FF909090" />
         <TableRow>
             <TextView
-                android:text="@string/name"
+                android:text="Units"
                 android:padding="5dip" />
 
             <TextView
-                android:text="VIC"
+android:id="@+id/units"
                 android:gravity="end"
                 android:padding="3dip" />
         </TableRow>
