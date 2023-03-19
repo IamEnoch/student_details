@@ -5,25 +5,13 @@ import static android.content.ContentValues.TAG;
 import android.content.Intent;
 import android.os.Bundle;
 
-<<<<<<< HEAD
-import androidx.annotation.Nullable;
-=======
 import androidx.annotation.NonNull;
->>>>>>> 7f70a2dad899572f45a4e6200731e70aa9b02b1e
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
-=======
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -33,7 +21,6 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
->>>>>>> 7f70a2dad899572f45a4e6200731e70aa9b02b1e
 
 import com.example.studentdetails.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -85,9 +72,6 @@ public class StudentDetails extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_student_details, container, false);
 
-<<<<<<< HEAD
-    }
-=======
 
         EditText firstName = rootView.findViewById(R.id.fname);
         EditText middleName = rootView.findViewById(R.id.mname);
@@ -297,4 +281,3 @@ public class StudentDetails extends Fragment {
         return rootView;
     }
 }
->>>>>>> 7f70a2dad899572f45a4e6200731e70aa9b02b1e
