@@ -1,7 +1,5 @@
 package com.example.studentdetails.Fragments;
 
-import static android.content.ContentValues.TAG;
-
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +16,10 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.studentdetails.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Objects;
 
 
 public class CourseDetails extends Fragment {
@@ -131,14 +124,7 @@ public class CourseDetails extends Fragment {
 
 
                             // Add a new document with a generated ID
-                            next.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
 
-// Create a new user with a first and last name
-
-                                }
-                            });
 
     // ADD LOGIC HERE
                         }
@@ -147,9 +133,11 @@ public class CourseDetails extends Fragment {
             next.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Fragment secondFrag = new Summary();
-                    FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
-                    fm.replace(R.id.course, secondFrag).commit();
+                    Fragment fragment = new Summary();
+                    FragmentTransaction fm =  requireActivity().getSupportFragmentManager().beginTransaction();
+                    fm.replace(R.id.course, fragment)
+                            .addToBackStack(null)
+                            .commit();
                 }
             });
 
