@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="80dp"
-            android:text="@string/course"
+            android:text="@string/school"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -126,22 +126,25 @@
             android:layout_height="0dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="67dp"
-            android:text="@string/schools"
-            app:layout_constraintEnd_toStartOf="@+id/school"
+            android:text="@string/course"
+            app:layout_constraintEnd_toStartOf="@+id/course"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <Spinner
-            android:id="@+id/school"
+            android:id="@+id/courses"
             android:layout_width="222dp"
             android:layout_height="48dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="72dp"
+            android:layout_marginBottom="2dp"
             android:autofillHints="Courses"
-            android:contentDescription="@string/school"
+            android:contentDescription="@string/course"
+            app:layout_constraintBottom_toTopOf="@+id/cancel"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/department" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView5" />
 
         <RadioGroup
             android:id="@+id/gender"
@@ -170,13 +173,13 @@
         </RadioGroup>
 
         <Spinner
-            android:id="@+id/courses"
+            android:id="@+id/school"
             android:layout_width="222dp"
             android:layout_height="48dp"
             android:layout_marginTop="44dp"
             android:autofillHints="Courses"
             app:contentDescription="courses"
-            android:contentDescription="@string/courses"
+            android:contentDescription="@string/school"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.432"
             app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -188,10 +191,12 @@
             android:layout_height="48dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="64dp"
-            android:contentDescription="@string/department"
             android:autofillHints="Courses"
+            android:contentDescription="@string/department"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/courses" />
+            app:layout_constraintHorizontal_bias="0.936"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/school" />
 
         <Button
             android:id="@+id/cancel"

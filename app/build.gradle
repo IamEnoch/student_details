@@ -33,8 +33,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.firebase:firebase-storage:20.0.1'
-    implementation 'com.google.firebase:firebase-firestore:24.1.1'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+    implementation 'com.google.firebase:firebase-firestore:24.4.4'
     def fragment_version = "1.5.5"
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -43,9 +43,12 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
 
 //    nav
     implementation 'androidx.viewpager:viewpager:1.1.0-alpha01'
+    //noinspection GradleDependency
     implementation "androidx.fragment:fragment:$fragment_version"
 
 }
